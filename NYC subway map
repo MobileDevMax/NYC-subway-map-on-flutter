@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(SubwayMapApp());
+}
+
+class SubwayMapApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'NYC Subway Map',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SubwayMapScreen(),
+    );
+  }
+}
+
+class SubwayMapScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('NYC Subway Map'),
+      ),
+      body: Center(
+        child: InteractiveViewer(
+          minScale: 0.1,
+          maxScale: 3.0,
+          child: Image.asset('assets/NYC Subway Map.jpg'),
+        ),
+      ),
+    );
+  }
+}
